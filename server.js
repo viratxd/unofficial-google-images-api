@@ -1,6 +1,7 @@
 const axios = require('axios')
 const http = require('http')
 const url = require('url')
+const port = process.env.PORT || 3000
 
 const userAgent = 'Mozilla/5.0 (Series40; Nokia205.1/04.51; Profile/MIDP-2.1 Configuration/CLDC-1.1) Gecko/20100401 S40OviBrowser/3.9.0.0.22'
 
@@ -72,4 +73,6 @@ const getImageData = url => {
   })
 }
 
-http.createServer(handleServer).listen(80)
+http.createServer(handleServer).listen(port, () => {
+  console.log('Server running at port', port)
+})
