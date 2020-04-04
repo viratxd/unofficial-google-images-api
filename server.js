@@ -72,4 +72,4 @@ const getImageData = url => {
   })
 }
 
-http.createServer(handleServer).listen(8080)
+http.createServer(handleServer).listen(80)
