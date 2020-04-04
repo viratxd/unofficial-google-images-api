@@ -19,6 +19,10 @@ const handleServer = async (req, res) => {
   const action = request.pathname
 
   if (action === '/') {
+    if (!request.query.search) {
+      res.json({ error: 'Search Parameter Not Found' })
+    }
+
     try {
       const images = await getResults(request.query.search)
       const imageUrl = images[Math.floor(Math.random() * images.length)]
@@ -30,12 +34,9 @@ const handleServer = async (req, res) => {
       }, 400)
     }
   } else {
-    res.json({
-      error: 'Not Found'
-    }, 404)
+    res.json({ error: 'Not Found' }, 404)
   }
 }
-
 
 const extractImages = html => {
   const imageMatchRegex = /imgres\?imgurl=(.*?)&amp;imgrefurl/gs
