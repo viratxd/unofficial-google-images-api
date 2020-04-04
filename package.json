@@ -1,0 +1,29 @@
+{
+  "name": "image-placeholder",
+  "version": "1.0.0",
+  "description": "Dummy Image Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sehmbimanvir/image-placeholder.git"
+  },
+  "keywords": [
+    "Image",
+    "Placeholder",
+    "Google",
+    "Image",
+    "Placeholder"
+  ],
+  "author": "Manvir Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sehmbimanvir/image-placeholder/issues"
+  },
+  "homepage": "https://github.com/sehmbimanvir/image-placeholder#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
