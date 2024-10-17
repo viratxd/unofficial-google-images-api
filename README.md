@@ -4,13 +4,13 @@ A simple script which returns you the random image based on your search.
 
 **How to use ?**
 * Clone this repository
-```git clone https://github.com/sehmbimanvir/image-placeholder.git```
+```git clone https://github.com/sehmbimanvir/unofficial-google-images-api.git```
 
 * Install packages
-```npm install```
+```yarn```
 
 * Run the script
-```node server```
+```yarn start```
 
 * Open link
-http://localhost:8080?search=cars
+http://localhost:3000/api/search?query=cars
