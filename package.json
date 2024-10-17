@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node ./dist/index.js",
+    "start": "NODE_PATH=./dist node dist/index.js",
     "dev": "NODE_PATH=./dist nodemon -e ts,js -w src --exec 'tsc && node ./dist/index.js'"
 
   },
