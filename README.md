@@ -38,7 +38,9 @@ This API allows you to search for images using various filters such as size, typ
 
 ## Example Request:
 
+```bash
 GET /api/search?query=sunset&size=xga&imageType=photo&color=trans&aspectRatio=w&fileType=png&start=20
+```
 
 ## Example Response:
 
