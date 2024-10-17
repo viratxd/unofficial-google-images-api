@@ -1,4 +1,4 @@
-# Google Images Placeholder
+# Unofficial Google Images API
 
 A simple script which returns you the random image based on your search.
 
@@ -8,6 +8,9 @@ A simple script which returns you the random image based on your search.
 
 * Install packages
 ```yarn```
+
+* Create .env file
+```cp .env_example .env```
 
 * Run the script
 ```yarn start```
