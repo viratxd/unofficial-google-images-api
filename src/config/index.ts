@@ -1,6 +1,6 @@
 const config: Record<string, any> = {
   app: {
-    port: process.env.APP_PORT
+    port: process.env.PORT
   },
   google: {
     url: process.env.GOOGLE_IMAGES_BASE_URI,
