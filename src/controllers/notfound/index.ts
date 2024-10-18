@@ -1,11 +1,7 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
+import { createSuccessResponse } from 'utils/response';
 
-const notFound = (req: Request, res: Response) => {
-  return res.json({
-    status: false,
-    data: {},
-    message: 'Route not found.'
-  }).status(404)
-}
+const notFound = (req: Request, res: Response) =>
+  createSuccessResponse(res, 'Route not found', {}, 404);
 
 export default notFound;
