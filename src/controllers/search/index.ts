@@ -1,10 +1,8 @@
 import { Request, Response } from 'express';
 import GoogleImageService from 'services/GoogleImageService';
+import { createSuccessResponse } from 'utils/response';
 
-const search = async (
-  req: Request,
-  res: Response
-) => {
+const search = async (req: Request, res: Response) => {
   const {
     query,
     size,
@@ -28,23 +26,18 @@ const search = async (
   });
   try {
     const images = await service.get();
-    return res
-      .json({
-        status: true,
-        message: 'Success',
-        data: {
-          images,
-        },
-      })
-      .status(200);
+    return createSuccessResponse(res, 'Images list', {
+      images,
+    });
   } catch (err: any) {
-    return res.json({
-      data: {
+    return createSuccessResponse(
+      res,
+      'Failed',
+      {
         error: err?.toString() || 'Something went wrong...',
       },
-      status: false,
-      message: 'Failed',
-    });
+      400
+    );
   }
 };
 
