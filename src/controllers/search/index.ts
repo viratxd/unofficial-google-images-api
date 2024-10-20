@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import Log from 'models/log';
 import GoogleImageService from 'services/GoogleImageService';
+import { getClientIp } from 'utils/helpers';
 import { createSuccessResponse } from 'utils/response';
 
 const search = async (req: Request, res: Response) => {
@@ -34,11 +35,7 @@ const search = async (req: Request, res: Response) => {
       req_time,
       res_time: Date.now(),
       extra: {
-        ip:
-          req.ip ||
-          req.headers['x-forwarded-for'] ||
-          req?.connection?.remoteAddress ||
-          '',
+        ip: getClientIp(req),
         user_agent: req.headers['user-agent'],
         referrer: req.headers['referer'] || req.headers['referrer'],
       },
