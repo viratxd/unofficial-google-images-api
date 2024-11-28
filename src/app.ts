@@ -14,7 +14,7 @@ app.get('/', (_: Request, res: Response) => {
 app.get('/gold', async (req: Request, res: Response) => {
   try {
     const response = await fetch(`http://bcast.classicbullion.com:7767/VOTSBroadcastStreaming/Services/xml/GetLiveRateByTemplateID/classic`).then(res => res.text())
-    return res.json(response)
+    return res.send(response)
   } catch (err) {
     return res.json({
       error: JSON.stringify(err)
