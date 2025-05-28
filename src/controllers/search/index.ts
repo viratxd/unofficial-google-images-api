@@ -1,7 +1,5 @@
 import { Request, Response } from 'express';
-import Log from 'models/log';
 import GoogleImageService from 'services/GoogleImageService';
-import { getClientIp } from 'utils/helpers';
 import { createSuccessResponse } from 'utils/response';
 
 const search = async (req: Request, res: Response) => {
@@ -26,20 +24,10 @@ const search = async (req: Request, res: Response) => {
     start,
     fileType,
   });
+
   try {
-    const req_time = Date.now();
     const images = await service.get();
-    /** Create Log */
-    await Log.create({
-      params: req.query,
-      req_time,
-      res_time: Date.now(),
-      extra: {
-        ip: getClientIp(req),
-        user_agent: req.headers['user-agent'],
-        referrer: req.headers['referer'] || req.headers['referrer'],
-      },
-    });
+
     return createSuccessResponse(res, 'Images list', {
       images,
     });

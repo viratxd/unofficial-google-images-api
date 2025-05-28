@@ -1,5 +1,16 @@
 import config from 'config';
 
+interface GoogleImageOptions {
+  query: string;
+  size?: string;
+  imageType?: string;
+  color?: string;
+  aspectRatio?: string;
+  time?: string;
+  start?: number;
+  fileType?: string;
+}
+
 class GoogleImageService {
   baseUrl: string = config.google.url;
   search: string = '';
